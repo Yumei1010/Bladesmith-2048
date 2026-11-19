@@ -1,0 +1,26 @@
+﻿root = true
+
+[*]
+charset = utf-8
+
+# CS8601: 可能出现 null 引用赋值。
+dotnet_diagnostic.CS8601.severity = none
+# CS8602: 解引用可能出现空引用。
+dotnet_diagnostic.CS8602.severity = none
+# CS8618: 退出构造函数时，不可为 null 的属性必须包含非 null 值。
+dotnet_diagnostic.CS8618.severity = none
+# MA0004: 使用 Task.ConfigureAwait(false)（不使用当前 SynchronizationContext 时）。
+# Godot 节点/主线程必须保留 SynchronizationContext，禁止 ConfigureAwait(false)，故关闭该规则。
+dotnet_diagnostic.MA0004.severity = none
+# MA0011: 使用带有 IFormatProvider 参数的 ToString 重载。
+dotnet_diagnostic.MA0011.severity = none
+# MA0007: 在最后一个值后添加逗号。
+dotnet_diagnostic.MA0007.severity = none
+# MA0008: 添加 StructLayoutAttribute。
+dotnet_diagnostic.MA0008.severity = none
+# MA0016: 优先使用集合抽象而非具体实现。
+dotnet_diagnostic.MA0016.severity = none
+# MA0046: 事件委托必须使用 EventHandler 双参签名。
+# 组件内部通知使用轻量 Action<T> 事件（Popped/DeviceChanged 等），
+# 不引入 EventArgs 包装类，故关闭该规则。
+dotnet_diagnostic.MA0046.severity = none

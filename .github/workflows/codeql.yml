@@ -1,0 +1,42 @@
+# GitHub Actions工作流配置：CodeQL静态代码分析
+name: "CodeQL"
+
+on:
+  push:
+    branches: [ "main" ]
+  pull_request:
+    branches: [ "main" ]
+  schedule:
+    - cron: '0 2 * * *'
+
+jobs:
+  analyze:
+    name: Analyze (C#)
+    # 私有库需要 GitHub Advanced Security 才能上传 code scanning 结果；
+    # 无 GHAS 时跳过，避免 code scanning 403（公开库正常分析）。
+    if: ${{ !github.event.repository.private }}
+    runs-on: ubuntu-latest
+    permissions:
+      security-events: write
+      contents: read
+      # CodeQL 的 status report 需要读取 workflow run（actions/workflow-runs）
+      actions: read
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v6
+
+      - name: Setup .NET
+        uses: actions/setup-dotnet@v5
+        with:
+          dotnet-version: |
+            10.0.x
+
+      - name: Initialize CodeQL
+        uses: github/codeql-action/init@v4
+        with:
+          languages: csharp
+          build-mode: autobuild
+
+      - name: Perform CodeQL Analysis
+        uses: github/codeql-action/analyze@v4

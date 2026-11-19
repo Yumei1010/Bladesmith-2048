@@ -1,0 +1,24 @@
+﻿namespace Bladesmith2048.scripts.component.hierarchical_state_machine;
+
+/// <summary>
+///     布尔转换条件：封装一个可随时更新的布尔值，满足时触发转换。
+///     这是最常见的转换条件形式（例如："血量低于 30%"、"是否按下了跳跃键"）。
+/// </summary>
+public sealed class BoolCondition : ITransitionCondition
+{
+    private readonly Func<bool> _predicate;
+
+    /// <summary>
+    ///     创建一个布尔条件。
+    /// </summary>
+    public BoolCondition(Func<bool> predicate)
+    {
+        ArgumentNullException.ThrowIfNull(predicate);
+        _predicate = predicate;
+    }
+
+    /// <summary>
+    ///     判断条件是否满足。
+    /// </summary>
+    public bool ShouldTransition() => _predicate();
+}

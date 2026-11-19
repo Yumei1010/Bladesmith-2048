@@ -1,0 +1,25 @@
+{
+  "title": "Sample Config",
+  "description": "最小配置样例：一个 schema + 若干 YAML，演示「schema → 源生成强类型类 → YAML 加载与校验」链路。",
+  "x-gframework-config-path": "config/sample",
+  "type": "object",
+  "required": ["id", "label"],
+  "properties": {
+    "id": {
+      "type": "string",
+      "description": "配置主键（表内唯一）。"
+    },
+    "label": {
+      "type": "string",
+      "default": "Sample",
+      "description": "显示名（default 演示）。"
+    },
+    "weight": {
+      "type": "integer",
+      "minimum": 0,
+      "maximum": 100,
+      "default": 0,
+      "description": "数值字段（range + default 演示）。"
+    }
+  }
+}

@@ -40,3 +40,4 @@ addons/*
 
 # 导出/打包产物
 build/
+export_presets.cfg

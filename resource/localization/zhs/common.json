@@ -1,3 +1,10 @@
 {
-  "app.title": "Bladesmith 2048"
+  "app.title": "锻刀:2048",
+  "title_menu.start": "开始游戏",
+  "title_menu.option": "选项",
+  "title_menu.quit": "退出",
+  "option_panel.title": "选项",
+  "option_panel.done": "完成",
+  "option_panel.undo": "恢复默认",
+  "option_panel.cancel": "取消"
 }

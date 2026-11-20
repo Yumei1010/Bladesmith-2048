@@ -1,3 +1,10 @@
 {
-  "app.title": "Bladesmith 2048"
+  "app.title": "Bladesmith:2048",
+  "title_menu.start": "Start",
+  "title_menu.option": "Option",
+  "title_menu.quit": "Quit",
+  "option_panel.title": "Options",
+  "option_panel.done": "Done",
+  "option_panel.undo": "Reset",
+  "option_panel.cancel": "Cancel"
 }

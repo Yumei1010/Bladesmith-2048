@@ -1,0 +1,132 @@
+[gd_scene format=3]
+
+[ext_resource type="Script" path="res://scripts/ui/menu/title_menu/TitleMenu.cs" id="1_script"]
+[ext_resource type="FontFile" uid="uid://hwj348jlw1x3" path="res://assets/fonts/ark-pixel-12px-proportional-zh_hans.ttf" id="2_font"]
+[ext_resource type="StyleBox" uid="uid://86chwt6nad6m" path="res://resource/theme/common/rounded_button_normal.tres" id="3_normal"]
+[ext_resource type="StyleBox" uid="uid://beujv0xu1161s" path="res://resource/theme/common/rounded_button_hover.tres" id="4_hover"]
+[ext_resource type="StyleBox" uid="uid://bloy4vwqfjtxq" path="res://resource/theme/common/rounded_button_pressed.tres" id="5_pressed"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_background"]
+bg_color = Color(0.39480576, 0.66342527, 0.57188225, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_title"]
+bg_color = Color(1, 0.645243, 0.28619203, 1)
+border_width_bottom = 8
+border_color = Color(1, 0.5294118, 0.28627452, 1)
+corner_radius_top_left = 128
+corner_radius_top_right = 128
+corner_radius_bottom_right = 128
+corner_radius_bottom_left = 128
+corner_detail = 20
+
+[sub_resource type="InputEventKey" id="InputEventKey_start"]
+device = -1
+keycode = 32
+unicode = 32
+
+[sub_resource type="Shortcut" id="Shortcut_start"]
+events = [SubResource("InputEventKey_start")]
+
+[node name="TitleMenu" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_script")
+
+[node name="BackgroundPanel" type="Panel" parent="."]
+unique_name_in_owner = true
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_background")
+
+[node name="CenterContainer" type="CenterContainer" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="VBoxContainer" type="VBoxContainer" parent="CenterContainer"]
+layout_mode = 2
+theme_override_constants/separation = 64
+alignment = 1
+
+[node name="TitleLabel" type="RichTextLabel" parent="CenterContainer/VBoxContainer"]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(1280, 240)
+layout_mode = 2
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 30
+theme_override_fonts/normal_font = ExtResource("2_font")
+theme_override_font_sizes/normal_font_size = 120
+theme_override_styles/normal = SubResource("StyleBoxFlat_title")
+bbcode_enabled = true
+text = "[wave]Bladesmith 2048"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="ButtonCenter" type="CenterContainer" parent="CenterContainer/VBoxContainer"]
+layout_mode = 2
+
+[node name="ButtonBox" type="VBoxContainer" parent="CenterContainer/VBoxContainer/ButtonCenter"]
+custom_maximum_size = Vector2(640, -1)
+layout_mode = 2
+theme_override_constants/separation = 36
+
+[node name="StartButton" type="Button" parent="CenterContainer/VBoxContainer/ButtonCenter/ButtonBox" groups=["Buttons"]]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(640, 96)
+layout_mode = 2
+offset_transform_enabled = true
+offset_transform_visual_only = false
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 24
+theme_override_fonts/font = ExtResource("2_font")
+theme_override_font_sizes/font_size = 72
+theme_override_styles/normal = ExtResource("3_normal")
+theme_override_styles/pressed = ExtResource("5_pressed")
+theme_override_styles/hover = ExtResource("4_hover")
+shortcut = SubResource("Shortcut_start")
+shortcut_in_tooltip = false
+text = "Start"
+
+[node name="OptionButton" type="Button" parent="CenterContainer/VBoxContainer/ButtonCenter/ButtonBox" groups=["Buttons"]]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(640, 96)
+layout_mode = 2
+offset_transform_enabled = true
+offset_transform_visual_only = false
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 24
+theme_override_fonts/font = ExtResource("2_font")
+theme_override_font_sizes/font_size = 72
+theme_override_styles/normal = ExtResource("3_normal")
+theme_override_styles/pressed = ExtResource("5_pressed")
+theme_override_styles/hover = ExtResource("4_hover")
+text = "Option"
+
+[node name="QuitButton" type="Button" parent="CenterContainer/VBoxContainer/ButtonCenter/ButtonBox" groups=["Buttons"]]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(640, 96)
+layout_mode = 2
+offset_transform_enabled = true
+offset_transform_visual_only = false
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 24
+theme_override_fonts/font = ExtResource("2_font")
+theme_override_font_sizes/font_size = 72
+theme_override_styles/normal = ExtResource("3_normal")
+theme_override_styles/pressed = ExtResource("5_pressed")
+theme_override_styles/hover = ExtResource("4_hover")
+text = "Quit"

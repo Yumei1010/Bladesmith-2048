@@ -5,6 +5,9 @@ namespace Bladesmith2048.scripts.enums.ui;
 /// </summary>
 public enum UiKey
 {
-    /// <summary>起始页面（极简占位，业务内容由新项目替换）。</summary>
-    MainMenu,
+    /// <summary>标题菜单（搬自 Template-Studio 的主菜单）。</summary>
+    TitleMenu,
+
+    /// <summary>设置弹窗（Overlay 层，搬自 Template-Studio）。</summary>
+    OptionPanel,
 }

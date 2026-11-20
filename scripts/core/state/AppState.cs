@@ -20,8 +20,8 @@ public class AppState : AsyncContextAwareStateBase
         await uiRouter.ClearAsync();
         await this.GetSystem<ISceneRouter>()!.ClearAsync();
 
-        // 起始页面：基线里是极简占位页，新项目替换成自己的首屏
-        await uiRouter.PushAsync(UiKey.MainMenu.ToString());
+        // 起始页面：标题菜单
+        await uiRouter.PushAsync(UiKey.TitleMenu.ToString());
     }
 
     /// <inheritdoc />

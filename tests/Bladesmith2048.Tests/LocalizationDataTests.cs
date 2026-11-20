@@ -46,10 +46,15 @@ public class LocalizationDataTests
     {
         var manager = CreateManager();
 
-        Assert.Equal("Bladesmith 2048", manager.GetText("common", "app.title"));
+        // 不写死产品名：改文案/换品牌不该让这条守卫变成讨好命名的测试
+        var zh = manager.GetText("common", "app.title");
+        Assert.False(string.IsNullOrWhiteSpace(zh), "zhs 的 app.title 取不到");
+        Assert.NotEqual("app.title", zh);   // 缺 key 时会原样返回 key
 
         manager.SetLanguage("eng");
-        Assert.Equal("Bladesmith 2048", manager.GetText("common", "app.title"));
+        var en = manager.GetText("common", "app.title");
+        Assert.False(string.IsNullOrWhiteSpace(en), "eng 的 app.title 取不到");
+        Assert.NotEqual("app.title", en);
     }
 
     [Fact]

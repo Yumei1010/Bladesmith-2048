@@ -1,3 +1,10 @@
 {
-  "app.title": "Bladesmith 2048"
+  "app.title": "Bladesmith 2048",
+  "chessboard.score": "分数",
+  "chessboard.best": "最高分",
+  "chessboard.restart": "重开",
+  "chessboard.back": "返回",
+  "chessboard.game_over": "无处可走了",
+  "chessboard.win": "合成出 2048 了",
+  "main_menu.start": "开始游戏"
 }

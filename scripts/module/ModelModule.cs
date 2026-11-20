@@ -5,17 +5,20 @@ using GFramework.Game.Setting;
 using GFramework.Godot.Setting;
 using GFramework.Godot.Setting.Data;
 using Bladesmith2048.scripts.data.setting;
+using Bladesmith2048.scripts.model;
 
 namespace Bladesmith2048.scripts.module;
 
 /// <summary>
-///     注册设置模型与三个应用器（音频/图形/本地化）。
+///     注册设置模型、棋盘模型与三个应用器（音频/图形/本地化）。
 /// </summary>
 /// <remarks>应用器负责把 Model 里的值落到引擎；没有它们，命令写了值也不会生效。</remarks>
 public class ModelModule : IArchitectureModule
 {
     public void Install(IArchitecture architecture)
     {
+        architecture.RegisterModel(new ChessboardModel());
+
         var settingsDataRepository = architecture.Context.GetUtility<ISettingsDataRepository>()!;
 
         architecture.RegisterModel(

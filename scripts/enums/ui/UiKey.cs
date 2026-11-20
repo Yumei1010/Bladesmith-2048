@@ -7,4 +7,7 @@ public enum UiKey
 {
     /// <summary>起始页面（极简占位，业务内容由新项目替换）。</summary>
     MainMenu,
+
+    /// <summary>2048 棋盘页面。</summary>
+    Chessboard,
 }

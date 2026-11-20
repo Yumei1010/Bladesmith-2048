@@ -1,0 +1,44 @@
+[gd_scene format=3 uid="uid://b4vaynfwb2c2h"]
+
+[ext_resource type="FontFile" uid="uid://hwj348jlw1x3" path="res://assets/fonts/ark-pixel-12px-proportional-zh_hans.ttf" id="1_84vut"]
+[ext_resource type="Script" uid="uid://lnvxboha2ucm" path="res://scripts/ui/chessboard/widgets/tile/Tile.cs" id="1_mnpgd"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_tdoj2"]
+corner_radius_top_left = 16
+corner_radius_top_right = 16
+corner_radius_bottom_right = 16
+corner_radius_bottom_left = 16
+corner_detail = 20
+
+[node name="Tile" type="Control" unique_id=1480551140]
+custom_minimum_size = Vector2(128, 128)
+custom_maximum_size = Vector2(128, 128)
+layout_mode = 3
+anchors_preset = 0
+offset_right = 128.0
+offset_bottom = 128.0
+script = ExtResource("1_mnpgd")
+
+[node name="BackgroundPanel" type="Panel" parent="." unique_id=1677534639]
+unique_name_in_owner = true
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_tdoj2")
+
+[node name="ScoreTextLabel" type="RichTextLabel" parent="." unique_id=439774652]
+unique_name_in_owner = true
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_fonts/normal_font = ExtResource("1_84vut")
+theme_override_font_sizes/normal_font_size = 64
+text = "2"
+horizontal_alignment = 1
+vertical_alignment = 1

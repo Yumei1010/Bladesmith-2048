@@ -1,0 +1,50 @@
+[gd_scene format=3 uid="uid://c2vd5hjhvi3e8"]
+
+[ext_resource type="FontFile" uid="uid://hwj348jlw1x3" path="res://assets/fonts/ark-pixel-12px-proportional-zh_hans.ttf" id="1_nsxmy"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_r6l1w"]
+border_width_left = 8
+border_width_top = 8
+border_width_right = 8
+border_width_bottom = 8
+border_color = Color(0, 0, 0, 1)
+corner_radius_top_left = 8
+corner_radius_top_right = 8
+corner_radius_bottom_right = 8
+corner_radius_bottom_left = 8
+corner_detail = 20
+
+[node name="Junkyard" type="Control" unique_id=156516141]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Panel" type="Panel" parent="." unique_id=223695279]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_r6l1w")
+
+[node name="Label" type="Label" parent="." unique_id=783875787]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -125.5
+offset_right = 125.5
+offset_bottom = 86.0
+grow_horizontal = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_colors/font_shadow_color = Color(0.12591085, 0.12591085, 0.12591082, 0)
+theme_override_colors/font_outline_color = Color(1, 1, 1, 1)
+theme_override_fonts/font = ExtResource("1_nsxmy")
+theme_override_font_sizes/font_size = 64
+text = "Junkyard"
+horizontal_alignment = 1
+vertical_alignment = 1

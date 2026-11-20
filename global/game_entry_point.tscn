@@ -4,6 +4,7 @@
 [ext_resource type="PackedScene" uid="uid://6s2urcdmkpbt" path="res://scenes/main.tscn" id="2_main"]
 [ext_resource type="Script" uid="uid://5mfgbvaive07" path="res://scripts/core/resource/SceneConfig.cs" id="3_scfg"]
 [ext_resource type="PackedScene" path="res://scenes/ui/menu/main_menu/main_menu.tscn" id="4_uimenu"]
+[ext_resource type="PackedScene" path="res://scenes/ui/chessboard/chessboard.tscn" id="6_uichess"]
 [ext_resource type="Script" uid="uid://cowpnmhamgtd3" path="res://scripts/core/resource/UiPageConfig.cs" id="5_uicfg"]
 
 [sub_resource type="Resource" id="Resource_main_scene"]
@@ -18,7 +19,13 @@ UiKey = 0
 Scene = ExtResource("4_uimenu")
 metadata/_custom_type_script = "uid://cowpnmhamgtd3"
 
+[sub_resource type="Resource" id="Resource_chessboard"]
+script = ExtResource("5_uicfg")
+UiKey = 1
+Scene = ExtResource("6_uichess")
+metadata/_custom_type_script = "uid://cowpnmhamgtd3"
+
 [node name="GameEntryPoint" type="Node" unique_id=729277825]
 script = ExtResource("1_a14y6")
-UiPageConfigs = Array[Object]([SubResource("Resource_main_menu")])
+UiPageConfigs = Array[Object]([SubResource("Resource_main_menu"), SubResource("Resource_chessboard")])
 GameSceneConfigs = Array[Object]([SubResource("Resource_main_scene")])

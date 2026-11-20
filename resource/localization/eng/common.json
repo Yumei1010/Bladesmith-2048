@@ -1,3 +1,10 @@
 {
-  "app.title": "Bladesmith 2048"
+  "app.title": "Bladesmith 2048",
+  "chessboard.score": "Score",
+  "chessboard.best": "Best",
+  "chessboard.restart": "Restart",
+  "chessboard.back": "Back",
+  "chessboard.game_over": "No moves left",
+  "chessboard.win": "You made 2048",
+  "main_menu.start": "Start"
 }

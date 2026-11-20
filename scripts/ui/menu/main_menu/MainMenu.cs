@@ -11,7 +11,7 @@ using Bladesmith2048.scripts.enums.ui;
 namespace Bladesmith2048.scripts.ui.menu.main_menu;
 
 /// <summary>
-///     起始页面（极简占位）：只演示页面注入链与本地化取词，业务内容由新项目替换。
+///     起始页面：展示标题与「开始游戏」入口，业务内容由新项目替换。
 /// </summary>
 /// <remarks>
 ///     保留它是因为 <c>UiRouter</c> 需要一个已注册页面：删掉它就要同时改
@@ -23,7 +23,9 @@ namespace Bladesmith2048.scripts.ui.menu.main_menu;
 public partial class MainMenu : Control, IController, IUiPageBehaviorProvider, ISimpleUiPage
 {
     [GetSystem] private ILocalizationManager _localization = null!;
+    [GetSystem] private IUiRouter _uiRouter = null!;
     [GetNode] private Label TitleLabel = null!;
+    [GetNode] private Button StartButton = null!;
 
     /// <summary>
     ///     节点就绪：架构注入 → 节点注入 → 异步初始化。
@@ -32,6 +34,7 @@ public partial class MainMenu : Control, IController, IUiPageBehaviorProvider, I
     {
         __InjectContextBindings_Generated();
         __InjectGetNodes_Generated();
+        StartButton.Pressed += OnStartPressed;
         _ = ReadyAsync();
     }
 
@@ -50,11 +53,26 @@ public partial class MainMenu : Control, IController, IUiPageBehaviorProvider, I
             await ToSignal(tree, SceneTree.SignalName.ProcessFrame);
 
             TitleLabel.Text = _localization.GetText("common", "app.title");
+            StartButton.Text = _localization.GetText("common", "main_menu.start");
             _log.Debug("MainMenu Initialize Done");
         }
         catch (Exception ex)
         {
             _log.Error("MainMenu Initialize Failed", ex);
+        }
+    }
+
+    private void OnStartPressed() => _ = OpenChessboardAsync();
+
+    private async Task OpenChessboardAsync()
+    {
+        try
+        {
+            await _uiRouter.PushAsync(UiKey.Chessboard.ToString());
+        }
+        catch (Exception ex)
+        {
+            _log.Error("打开棋盘页面失败", ex);
         }
     }
 }

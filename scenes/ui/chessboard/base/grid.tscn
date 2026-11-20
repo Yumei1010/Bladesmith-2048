@@ -1,0 +1,127 @@
+[gd_scene format=3 uid="uid://dvs32iehxlrey"]
+
+[ext_resource type="PackedScene" uid="uid://bo5ua5fpp2wyb" path="res://scenes/ui/chessboard/base/grid_cell.tscn" id="1_4dsv3"]
+[ext_resource type="Script" uid="uid://daf44be7cy7j3" path="res://scripts/ui/chessboard/widgets/grid/Grid.cs" id="1_kk41p"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_lfwpe"]
+bg_color = Color(0.2509804, 0.2509804, 0.2509804, 1)
+border_width_left = 16
+border_width_top = 16
+border_width_right = 16
+border_width_bottom = 16
+border_color = Color(0, 0, 0, 1)
+corner_radius_top_left = 16
+corner_radius_top_right = 16
+corner_radius_bottom_right = 16
+corner_radius_bottom_left = 16
+corner_detail = 20
+
+[node name="Grid" type="Control" unique_id=2084457525]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_kk41p")
+
+[node name="BackgroundPanel" type="Panel" parent="." unique_id=1123325822]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(592, 592)
+custom_maximum_size = Vector2(592, 592)
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -296.0
+offset_top = -296.0
+offset_right = 296.0
+offset_bottom = 296.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_lfwpe")
+
+[node name="GridCellContainer" type="GridContainer" parent="BackgroundPanel" unique_id=507624087]
+custom_minimum_size = Vector2(560, 560)
+custom_maximum_size = Vector2(560, 560)
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -280.0
+offset_top = -280.0
+offset_right = 280.0
+offset_bottom = 280.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/h_separation = 16
+theme_override_constants/v_separation = 16
+columns = 4
+
+[node name="GridCell11" parent="BackgroundPanel/GridCellContainer" unique_id=646368073 instance=ExtResource("1_4dsv3")]
+unique_name_in_owner = true
+layout_mode = 2
+
+[node name="GridCell12" parent="BackgroundPanel/GridCellContainer" unique_id=533715537 instance=ExtResource("1_4dsv3")]
+unique_name_in_owner = true
+layout_mode = 2
+
+[node name="GridCell13" parent="BackgroundPanel/GridCellContainer" unique_id=180333456 instance=ExtResource("1_4dsv3")]
+unique_name_in_owner = true
+layout_mode = 2
+
+[node name="GridCell14" parent="BackgroundPanel/GridCellContainer" unique_id=285035433 instance=ExtResource("1_4dsv3")]
+unique_name_in_owner = true
+layout_mode = 2
+
+[node name="GridCell21" parent="BackgroundPanel/GridCellContainer" unique_id=1466037767 instance=ExtResource("1_4dsv3")]
+unique_name_in_owner = true
+layout_mode = 2
+
+[node name="GridCell22" parent="BackgroundPanel/GridCellContainer" unique_id=712735079 instance=ExtResource("1_4dsv3")]
+unique_name_in_owner = true
+layout_mode = 2
+
+[node name="GridCell23" parent="BackgroundPanel/GridCellContainer" unique_id=7408725 instance=ExtResource("1_4dsv3")]
+unique_name_in_owner = true
+layout_mode = 2
+
+[node name="GridCell24" parent="BackgroundPanel/GridCellContainer" unique_id=1203472979 instance=ExtResource("1_4dsv3")]
+unique_name_in_owner = true
+layout_mode = 2
+
+[node name="GridCell31" parent="BackgroundPanel/GridCellContainer" unique_id=516170170 instance=ExtResource("1_4dsv3")]
+unique_name_in_owner = true
+layout_mode = 2
+
+[node name="GridCell32" parent="BackgroundPanel/GridCellContainer" unique_id=2053583733 instance=ExtResource("1_4dsv3")]
+unique_name_in_owner = true
+layout_mode = 2
+
+[node name="GridCell33" parent="BackgroundPanel/GridCellContainer" unique_id=725683518 instance=ExtResource("1_4dsv3")]
+unique_name_in_owner = true
+layout_mode = 2
+
+[node name="GridCell34" parent="BackgroundPanel/GridCellContainer" unique_id=134375375 instance=ExtResource("1_4dsv3")]
+unique_name_in_owner = true
+layout_mode = 2
+
+[node name="GridCell41" parent="BackgroundPanel/GridCellContainer" unique_id=1334525306 instance=ExtResource("1_4dsv3")]
+unique_name_in_owner = true
+layout_mode = 2
+
+[node name="GridCell42" parent="BackgroundPanel/GridCellContainer" unique_id=396100814 instance=ExtResource("1_4dsv3")]
+unique_name_in_owner = true
+layout_mode = 2
+
+[node name="GridCell43" parent="BackgroundPanel/GridCellContainer" unique_id=447808723 instance=ExtResource("1_4dsv3")]
+unique_name_in_owner = true
+layout_mode = 2
+
+[node name="GridCell44" parent="BackgroundPanel/GridCellContainer" unique_id=2733809 instance=ExtResource("1_4dsv3")]
+unique_name_in_owner = true
+layout_mode = 2
